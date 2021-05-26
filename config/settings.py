@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECRET_KEY = "shtb=poi7k-ngn586l#104+5!hk9*czwkm!xxh0m6(=x5rge3"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['joboa-gallery.herokuapp.com', '127.0.0.1']
 
