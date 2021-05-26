@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
 from pathlib import Path
 import os
 import django_heroku
@@ -32,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-# SECRET_KEY = "shtb=poi7k-ngn586l#104+5!hk9*czwkm!xxh0m6(=x5rge3"
+# SECRET_KEY = '6aeb41209e977d6481301ae3e27f7eafe16a099970a20b91'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     # new
     'django.contrib.staticfiles',
     'gallery.apps.GalleryConfig',
+    'cloudinary_storage',
     'cloudinary',
     'rest_framework',
     'corsheaders',
@@ -158,17 +158,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # CLOUDINARY CONFIG
-# cloudinary.config(
-#     cloud_name=os.environ.get("CLOUD_NAME"),
-#     api_key=os.environ.get("API_KEY"),
-#     api_secret=os.environ.get("API_SECRET"),
-# )
+# cloudinary.config(cloud_name=os.getenv('CLOUD_NAME'),
+#                   api_key=os.getenv('API_KEY'),
+#                   api_secret=os.getenv('API_SECRET'))
 
 
-cloudinary.config(cloud_name=os.getenv('CLOUD_NAME'),
-                  api_key=os.getenv('API_KEY'),
-                  api_secret=os.getenv('API_SECRET'))
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('API_KEY'),
+    'API_SECRET': os.getenv('API_SECRET')
+}
+
 
 django_heroku.settings(locals())
