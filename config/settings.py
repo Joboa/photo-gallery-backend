@@ -19,6 +19,10 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+# Environment variables
+from dotenv import load_dotenv
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -48,9 +52,10 @@ INSTALLED_APPS = [
     # new
     'django.contrib.staticfiles',
     'gallery.apps.GalleryConfig',
+    'cloudinary',
     'rest_framework',
     'corsheaders',
-    'cloudinary',
+
 ]
 
 # new
@@ -154,11 +159,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-django_heroku.settings(locals())
-
 # CLOUDINARY CONFIG
-cloudinary.config(
-    cloud_name = os.environ.get("cloud_name"),
-    api_key = os.environ.get("api_key"),
-    api_secret = os.environ.get("api_secret"),
-)
+# cloudinary.config(
+#     cloud_name=os.environ.get("CLOUD_NAME"),
+#     api_key=os.environ.get("API_KEY"),
+#     api_secret=os.environ.get("API_SECRET"),
+# )
+
+
+cloudinary.config(cloud_name=os.getenv('CLOUD_NAME'),
+                  api_key=os.getenv('API_KEY'),
+                  api_secret=os.getenv('API_SECRET'))
+
+django_heroku.settings(locals())

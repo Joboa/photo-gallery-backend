@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 
 class Image(models.Model):
@@ -15,7 +16,8 @@ class Image(models.Model):
                ('Shaft', 'shaft'),)
 
     name = models.CharField(max_length=100)
-    img = models.ImageField(upload_to='images/')
+    # img = models.ImageField(upload_to='images/')
+    img = CloudinaryField('image')
     category = models.CharField(max_length=50, choices=CHOICES, default='')
     created = models.DateTimeField(auto_now_add=True)
 
