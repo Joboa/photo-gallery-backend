@@ -1,7 +1,11 @@
 {
     "_meta": {
         "hash": {
+<<<<<<< HEAD
             "sha256": "b153cddbe92c9407032956491353806fd2796c7ce79cd75c5bb63a9a59fc40c2"
+=======
+            "sha256": "bb33285febe4c59bd4530e3c6ac67f54ad283ae227d1134397d9642cab3e0fa0"
+>>>>>>> 2145cfa925bad779ea67dc941e991f142eb9171e
         },
         "pipfile-spec": 6,
         "requires": {
@@ -24,6 +28,7 @@
             "markers": "python_version >= '3.6'",
             "version": "==3.3.4"
         },
+<<<<<<< HEAD
         "dj-database-url": {
             "hashes": [
                 "sha256:4aeaeb1f573c74835b0686a2b46b85990571159ffc21aa57ecd4d1e1cb334163",
@@ -31,6 +36,8 @@
             ],
             "version": "==0.5.0"
         },
+=======
+>>>>>>> 2145cfa925bad779ea67dc941e991f142eb9171e
         "django": {
             "hashes": [
                 "sha256:9a0a2f3d34c53032578b54db7ec55929b87dda6fec27a06cc2587afbea1965e5",
@@ -47,6 +54,7 @@
             "index": "pypi",
             "version": "==3.4.0"
         },
+<<<<<<< HEAD
         "django-heroku": {
             "hashes": [
                 "sha256:2bc690aab89eedbe01311752320a9a12e7548e3b0ed102681acc5736a41a4762",
@@ -55,6 +63,8 @@
             "index": "pypi",
             "version": "==0.3.1"
         },
+=======
+>>>>>>> 2145cfa925bad779ea67dc941e991f142eb9171e
         "djangorestframework": {
             "hashes": [
                 "sha256:5cc724dc4b076463497837269107e1995b1fbc917468d1b92d188fd1af9ea789",
@@ -111,6 +121,7 @@
             "index": "pypi",
             "version": "==8.2.0"
         },
+<<<<<<< HEAD
         "psycopg2": {
             "hashes": [
                 "sha256:00195b5f6832dbf2876b8bf77f12bdce648224c89c880719c745b90515233301",
@@ -132,6 +143,8 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.8.6"
         },
+=======
+>>>>>>> 2145cfa925bad779ea67dc941e991f142eb9171e
         "pytz": {
             "hashes": [
                 "sha256:83a4a90894bf38e243cf052c8b58f381bfe9a7a483f6a9cab140bc7f702ac4da",

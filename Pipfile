@@ -10,7 +10,10 @@ pillow = "*"
 django-cors-headers = "==3.4.0"
 gunicorn = "*"
 whitenoise = "*"
+<<<<<<< HEAD
 django-heroku = "*"
+=======
+>>>>>>> 2145cfa925bad779ea67dc941e991f142eb9171e
 
 [dev-packages]
 
