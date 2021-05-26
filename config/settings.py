@@ -12,10 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-<<<<<<< HEAD
 import django_heroku
-=======
->>>>>>> 2145cfa925bad779ea67dc941e991f142eb9171e
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,16 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-<<<<<<< HEAD
 # SECRET_KEY = "shtb=poi7k-ngn586l#104+5!hk9*czwkm!xxh0m6(=x5rge3"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-=======
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
->>>>>>> 2145cfa925bad779ea67dc941e991f142eb9171e
 
 ALLOWED_HOSTS = ['joboa-gallery.herokuapp.com', '127.0.0.1']
 
@@ -149,6 +140,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
@@ -156,8 +148,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-<<<<<<< HEAD
+
 
 django_heroku.settings(locals())
-=======
->>>>>>> 2145cfa925bad779ea67dc941e991f142eb9171e
