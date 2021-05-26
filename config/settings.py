@@ -14,6 +14,11 @@ from pathlib import Path
 import os
 import django_heroku
 
+# Cloudinary imports
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -45,6 +50,7 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     'rest_framework',
     'corsheaders',
+    'cloudinary',
 ]
 
 # new
@@ -142,12 +148,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
 
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-
 django_heroku.settings(locals())
+
+# CLOUDINARY CONFIG
+cloudinary.config(
+    cloud_name = os.environ.get("cloud_name"),
+    api_key = os.environ.get("api_key"),
+    api_secret = os.environ.get("api_secret"),
+)
