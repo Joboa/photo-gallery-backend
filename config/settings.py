@@ -68,6 +68,7 @@ REST_FRAMEWORK = {
 # new
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
+    'https://aeroline.netlify.app/',
     'https://joboa-gallery.herokuapp.com',
 )
 
