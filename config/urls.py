@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 
@@ -21,10 +22,18 @@ from django.conf import settings
 from django.urls import re_path
 from django.views.static import serve
 
+# For the frontend
+from django.views.generic import TemplateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include('gallery.urls'),)
+    path('api/v1/', include('gallery.urls')),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt ')),
 ]
+
+# For the frontend 
+urlpatterns += [re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]
 
 # media url
 if settings.DEBUG:
