@@ -14,14 +14,14 @@ django-heroku = "*"
 cloudinary = "*"
 python-dotenv = "*"
 django-cloudinary-storage = "*"
-psycopg2 = "*"
-psycopg2-binary = "*"
 djoser = "*"
 django-simple-history = "*"
 django-extensions = "*"
-djangorestframework-simplejwt = "==4.4.0"
+djangorestframework-simplejwt = "==4.6.0"
+psycopg2-binary = "*"
+psycopg2 = "==2.7.5"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
